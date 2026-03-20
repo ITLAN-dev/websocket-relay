@@ -413,5 +413,4 @@ MIT
 
 
 > **© 2026 ITLAN**  
-> При распространении обязательно сохраняйте ссылку на оригинальный репозиторий:  
-> 🔗 [https://github.com/itlan/websocket-relay](https://github.com/itlan/websocket-relay)
+> При распространении обязательно сохраняйте ссылку на оригинальный репозиторий: 🔗 [ITLAN-dev/websocket-relay](https://github.com/ITLAN-dev/websocket-relay)
