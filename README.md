@@ -114,15 +114,7 @@ pip install --upgrade pip
 pip install aiohttp websockets
 ```
 
-#### 1.3. Создание файла relay.py
-
-```bash
-nano relay.py
-```
-
-Скопируйте код из [relay.py](#) (см. полный код в начале документа).
-
-#### 1.4. Открытие портов в фаерволе
+#### 1.3. Открытие портов в фаерволе
 
 ```bash
 # Если используем ufw (Ubuntu/Debian)
@@ -163,14 +155,6 @@ pip install --upgrade pip
 ```bash
 pip install websockets requests
 ```
-
-#### 2.3. Создание файла agent.py
-
-```bash
-nano agent.py
-```
-
-Скопируйте код из [agent.py](#) (см. полный код в начале документа).
 
 **Важно:** Укажите правильный IP-адрес вашего relay-сервера в строке:
 ```python
