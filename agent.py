@@ -50,7 +50,7 @@ async def handler():
 
                     print(f"📥 HTTP запрос: {req.get('method')} {req.get('url')}")
 
-                    # 3. ОБРАБАТЫВАЕМ ЗАПРОС
+                    # обрабатываем запрос
                     try:
                         body = base64.b64decode(req.get("body", "")) if req.get("body") else None
 
