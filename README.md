@@ -127,7 +127,7 @@ sudo iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport 8765 -j ACCEPT
 ```
 
-**Важно:** Если сервер в облаке (AWS, GCP, DigitalOcean), также откройте порты 8080 и 8765 в облачном фаерволе (Security Group / Firewall Rules).
+**Важно:** Если сервер в облаке (AWS, GCP, DigitalOcean), нужно также открыть порты 8080 и 8765.
 
 ---
 
@@ -304,15 +304,7 @@ python3 -m http.server 8080
 - Добавить аутентификацию на relay-сервере
 - Использовать WSS (WebSocket Secure) вместо WS
 
-### 2. Защита relay-сервера
-
-```bash
-# Ограничить доступ по IP (если клиенты имеют статичные IP)
-sudo ufw allow from 192.168.0.0/24 to any port 8080
-sudo ufw allow from 192.168.0.0/24 to any port 8765
-```
-
-### 3. Проверка сертификатов
+### 2. Проверка сертификатов
 
 Если устройство использует HTTPS с самоподписанным сертификатом, в агенте используется `verify=False`. Для production используйте корректные сертификаты.
 
@@ -413,4 +405,4 @@ MIT
 
 
 > **© 2026 ITLAN**  
-> При распространении обязательно сохраняйте ссылку на оригинальный репозиторий: 🔗 [ITLAN-dev/websocket-relay](https://github.com/ITLAN-dev/websocket-relay)
+> При распространении сохраняйте ссылку на оригинальный репозиторий: 🔗 [ITLAN-dev/websocket-relay](https://github.com/ITLAN-dev/websocket-relay)
