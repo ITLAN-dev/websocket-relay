@@ -295,15 +295,8 @@ I/RelayService: 🎉 Регистрация подтверждена
 
 ---
 
-## 🤝 Контакты
-
-**ITLAN**     
-- 🌐 Сайт: [https://github.com/ITLAN-dev](https://github.com/ITLAN-dev)
-
----
-
 <div align="center">
   
-**Разработано (c) 2026 ITLAN**
+**(c) 2026 ITLAN**
 
 </div>
