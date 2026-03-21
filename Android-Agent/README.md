@@ -293,10 +293,6 @@ I/RelayService: 🎉 Регистрация подтверждена
 
 (Добавить)
 
-Copyright (c) 2026 ITLAN
-
-(Добавить)
-
 ---
 
 ## 🤝 Контакты
@@ -308,6 +304,6 @@ Copyright (c) 2026 ITLAN
 
 <div align="center">
   
-**Разработано ITLAN | 2026**
+**Разработано (c) 2026 ITLAN**
 
 </div>
