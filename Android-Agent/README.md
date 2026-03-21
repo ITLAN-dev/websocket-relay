@@ -79,22 +79,22 @@ python relay.py
 ### 2. Настройте приложение
 - Откройте приложение на Android
 - Введите URL relay-сервера: `ws://xx.xx.xx.xx:8765`
-- Введите ID устройства: `android-blazer-1`
+- Введите ID устройства: `android-device-1`
 - Нажмите **"Запустить агента"**
 
 ### 3. Проверьте подключение
 ```bash
-curl http://xx.xx.xx.xx:8080/device/android-blazer-1/test
+curl http://xx.xx.xx.xx:8080/device/android-device-1/test
 ```
 
 Ожидаемый ответ:
 ```json
 {
     "status": "ok",
-    "device": "android-blazer-1",
+    "device": "android-device-1",
     "method": "GET",
     "url": "/test",
-    "message": "I'm a BLAZER for NAT, tune me !!!",
+    "message": "I'm a device for NAT, tune me !!!",
     "timestamp": 1742500000
 }
 ```
@@ -212,7 +212,7 @@ adb logcat -d > logcat.txt
 I/RelayService: Service onCreate
 I/RelayService: 🔌 Подключение к ws://xx.xx.xx.xx:8765
 I/RelayService: ✅ WebSocket подключен!
-I/RelayService: 📤 Отправлена регистрация: android-blazer-1 (IP: 192.168.xx.xx)
+I/RelayService: 📤 Отправлена регистрация: android-device-1 (IP: 192.168.xx.xx)
 I/RelayService: 🎉 Регистрация подтверждена
 ```
 
@@ -231,8 +231,7 @@ Copyright (c) 2026 ITLAN
 ## 🤝 Контакты
 
 **ITLAN**     
-- 🌐 Сайт: https://github.com
-- 📧 Email: (Добавить)
+- 🌐 Сайт: [https://github.com/ITLAN-dev](https://github.com/ITLAN-dev)
 
 ---
 
