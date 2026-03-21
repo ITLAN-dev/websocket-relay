@@ -162,7 +162,7 @@ private fun handleHttpRequest(request: HttpRequestMessage) {
             "device" to DEVICE_ID,
             "method" to request.method,
             "url" to request.url,
-            "message" to "I am a BLAZER for NAT, tune me !!!",
+            "message" to "I am a device for NAT, tune me !!!",
             "timestamp" to System.currentTimeMillis() / 1000
         )
         
@@ -188,10 +188,10 @@ private fun handleHttpRequest(request: HttpRequestMessage) {
 
 {
     "status": "ok",
-    "device": "android-blazer-1",
+    "device": "android-device-1",
     "method": "GET",
     "url": "/test",
-    "message": "I am a BLAZER for NAT, tune me !!!",
+    "message": "I am a device for NAT, tune me !!!",
     "timestamp": 1774098484
 }
 ```
