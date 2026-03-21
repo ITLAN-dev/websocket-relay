@@ -127,6 +127,77 @@ WebSocketRelayAgent/
 
 ---
 
+## 📱 RelayService.kt — это **Foreground Service** (фоновый сервис)
+
+Обеспечивает постоянное подключение к relay-серверу через WebSocket, регистрирует устройство, обрабатывает входящие HTTP-запросы и выдает ответ в виде JSON
+
+### 📨 Обработка HTTP-запросов
+
+Когда relay-сервер получает HTTP-запрос к устройству, он отправляет WebSocket-сообщение следующего формата:
+```json
+
+{
+    "requestId": "uuid-1234",
+    "method": "GET",
+    "url": "/api/status",
+    "headers": {
+        "user-agent": "curl/7.88.1",
+        "accept": "*/*"
+    },
+    "body": null,
+    "timestamp": 1700000000
+}
+```
+Метод **handleHttpRequest()** обрабатывает входящие запросы и возвращает фиксированный JSON-ответ без обращения к реальному веб-серверу (тестовый режим):
+
+```kotlin
+
+private fun handleHttpRequest(request: HttpRequestMessage) {
+    Log.i(TAG, "📥 HTTP запрос: ${request.method} ${request.url}")
+
+    try {
+        // Тестовый ответ
+        val testResponse = mapOf(
+            "status" to "ok",
+            "device" to DEVICE_ID,
+            "method" to request.method,
+            "url" to request.url,
+            "message" to "I am a BLAZER for NAT, tune me !!!",
+            "timestamp" to System.currentTimeMillis() / 1000
+        )
+        
+        val responseBody = gson.toJson(testResponse)
+        
+        val response = HttpResponseMessage(
+            requestId = request.requestId,
+            status = 200,
+            headers = mapOf("Content-Type" to "application/json"),
+            body = Base64.encodeToString(responseBody.toByteArray(), Base64.NO_WRAP)
+        )
+        
+        webSocket?.send(gson.toJson(response))
+        Log.i(TAG, "📤 Ответ отправлен для ${request.requestId}")
+        
+    } catch (e: Exception) {
+        Log.e(TAG, "❌ Ошибка обработки: ${e.message}")
+    }
+}
+```
+Пример ответа:
+```json
+
+{
+    "status": "ok",
+    "device": "android-blazer-1",
+    "method": "GET",
+    "url": "/test",
+    "message": "I am a BLAZER for NAT, tune me !!!",
+    "timestamp": 1774098484
+}
+```
+---
+
+
 ## 🔧 Настройка AndroidManifest.xml
 
 ```xml
